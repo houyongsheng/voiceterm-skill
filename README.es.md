@@ -113,3 +113,7 @@ README.es.md         Guía en español
 ## Estado
 
 Esta es una versión inicial que se instala desde el código fuente. Se podrá añadir una distribución como plugin empaquetado después de validar el flujo de trabajo en más terminales y plataformas.
+
+## Licencia
+
+MIT

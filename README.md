@@ -111,3 +111,7 @@ README.zh-CN.md      简体中文指南
 ## Status
 
 This is an early, source-install release. A packaged plugin distribution can be added after the workflow has been validated across more terminals and platforms.
+
+## License
+
+MIT
