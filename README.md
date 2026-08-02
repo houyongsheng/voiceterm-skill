@@ -57,27 +57,27 @@ On Windows, run the same commands in WSL. Start a new Codex task after installat
 Open a terminal at the target project root, then create a session named `project-purpose`:
 
 ```bash
-tmux new -s hsk3-web
+tmux new -s mygame-web
 ```
 
-Then say: “Use VoiceTerm to work with `hsk3-web`.”
+Then say: “Use VoiceTerm to work with `mygame-web`.”
 
 For an existing session:
 
 ```bash
-tmux attach -t hsk3-web
+tmux attach -t mygame-web
 ```
 
-Use meaningful role suffixes such as `web`, `api`, `test`, `log`, or `fix`. If the same role needs another independent session, add a short number, such as `hsk3-test-2`.
+Use meaningful role suffixes such as `web`, `api`, `test`, `log`, or `fix`. If the same role needs another independent session, add a short number, such as `mygame-test-2`.
 
 ## Multiple projects and terminals
 
 | Scenario | Suggested session name |
 | --- | --- |
-| Front-end work for `hsk3` | `hsk3-web` |
-| Tests for `hsk3` | `hsk3-test` |
-| Service logs for `hsk3` | `hsk3-log` |
-| A second test task | `hsk3-test-2` |
+| Front-end work for `mygame` | `mygame-web` |
+| Tests for `mygame` | `mygame-test` |
+| Service logs for `mygame` | `mygame-log` |
+| A second test task | `mygame-test-2` |
 
 VoiceTerm matches the project and purpose to the session name, and asks instead of guessing when the target is ambiguous.
 

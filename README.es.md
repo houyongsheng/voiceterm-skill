@@ -57,27 +57,27 @@ En Windows, ejecuta los mismos comandos en WSL. Inicia una nueva tarea de Codex 
 Abre una terminal en la raíz del proyecto objetivo y crea una sesión con el formato `proyecto-propósito`:
 
 ```bash
-tmux new -s hsk3-web
+tmux new -s mygame-web
 ```
 
-Después di: “Usa VoiceTerm para trabajar con `hsk3-web`”.
+Después di: “Usa VoiceTerm para trabajar con `mygame-web`”.
 
 Para conectarte a una sesión existente:
 
 ```bash
-tmux attach -t hsk3-web
+tmux attach -t mygame-web
 ```
 
-Usa sufijos de función significativos como `web`, `api`, `test`, `log` o `fix`. Si la misma función necesita otra sesión independiente, añade un número corto, por ejemplo `hsk3-test-2`.
+Usa sufijos de función significativos como `web`, `api`, `test`, `log` o `fix`. Si la misma función necesita otra sesión independiente, añade un número corto, por ejemplo `mygame-test-2`.
 
 ## Varios proyectos y terminales
 
 | Escenario | Nombre de sesión sugerido |
 | --- | --- |
-| Trabajo de front-end para `hsk3` | `hsk3-web` |
-| Pruebas para `hsk3` | `hsk3-test` |
-| Registros de servicio para `hsk3` | `hsk3-log` |
-| Una segunda tarea de pruebas | `hsk3-test-2` |
+| Trabajo de front-end para `mygame` | `mygame-web` |
+| Pruebas para `mygame` | `mygame-test` |
+| Registros de servicio para `mygame` | `mygame-log` |
+| Una segunda tarea de pruebas | `mygame-test-2` |
 
 VoiceTerm relaciona el proyecto y el propósito con el nombre de la sesión, y pide confirmación en lugar de adivinar cuando el destino es ambiguo.
 

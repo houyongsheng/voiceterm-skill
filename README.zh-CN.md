@@ -57,27 +57,27 @@ cp -R skills/voice-term ~/.codex/skills/voice-term
 在目标**项目根目录**打开终端，再创建一个名为“项目名-用途”的会话：
 
 ```bash
-tmux new -s hsk3-web
+tmux new -s mygame-web
 ```
 
-然后对 Codex 说：“使用 VoiceTerm 操作 `hsk3-web`。”
+然后对 Codex 说：“使用 VoiceTerm 操作 `mygame-web`。”
 
 如果会话已存在，重新连接：
 
 ```bash
-tmux attach -t hsk3-web
+tmux attach -t mygame-web
 ```
 
-用途请用简短、好说的词，例如 `web`、`api`、`test`、`log` 或 `fix`。如果同一用途需要第二个独立会话，追加短编号，例如 `hsk3-test-2`。
+用途请用简短、好说的词，例如 `web`、`api`、`test`、`log` 或 `fix`。如果同一用途需要第二个独立会话，追加短编号，例如 `mygame-test-2`。
 
 ## 多项目、多终端
 
 | 场景 | 推荐会话名 |
 | --- | --- |
-| 项目 `hsk3` 的前端开发 | `hsk3-web` |
-| 项目 `hsk3` 的测试 | `hsk3-test` |
-| 项目 `hsk3` 的服务日志 | `hsk3-log` |
-| 第二个测试任务 | `hsk3-test-2` |
+| 项目 `mygame` 的前端开发 | `mygame-web` |
+| 项目 `mygame` 的测试 | `mygame-test` |
+| 项目 `mygame` 的服务日志 | `mygame-log` |
+| 第二个测试任务 | `mygame-test-2` |
 
 VoiceTerm 会按项目名和用途匹配会话；目标有歧义时，它会先确认，而不是猜测。
 

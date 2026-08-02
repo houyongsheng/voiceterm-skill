@@ -57,27 +57,27 @@ Windows では同じコマンドを WSL で実行してください。インス�
 対象プロジェクトのルートでターミナルを開き、`project-purpose` 形式のセッションを作成します。
 
 ```bash
-tmux new -s hsk3-web
+tmux new -s mygame-web
 ```
 
-次に Codex へ「VoiceTerm を使って `hsk3-web` を操作して」と依頼します。
+次に Codex へ「VoiceTerm を使って `mygame-web` を操作して」と依頼します。
 
 既存セッションに接続する場合：
 
 ```bash
-tmux attach -t hsk3-web
+tmux attach -t mygame-web
 ```
 
-用途の接尾辞には `web`、`api`、`test`、`log`、`fix` のような分かりやすい語を使います。同じ用途で別のセッションが必要なら、`hsk3-test-2` のように短い番号を追加します。
+用途の接尾辞には `web`、`api`、`test`、`log`、`fix` のような分かりやすい語を使います。同じ用途で別のセッションが必要なら、`mygame-test-2` のように短い番号を追加します。
 
 ## 複数のプロジェクトとターミナル
 
 | 用途 | 推奨セッション名 |
 | --- | --- |
-| `hsk3` のフロントエンド作業 | `hsk3-web` |
-| `hsk3` のテスト | `hsk3-test` |
-| `hsk3` のサービスログ | `hsk3-log` |
-| 二つ目のテストタスク | `hsk3-test-2` |
+| `mygame` のフロントエンド作業 | `mygame-web` |
+| `mygame` のテスト | `mygame-test` |
+| `mygame` のサービスログ | `mygame-log` |
+| 二つ目のテストタスク | `mygame-test-2` |
 
 VoiceTerm はプロジェクト名と用途をセッション名に照合します。対象が曖昧な場合は、推測せず確認します。
 
