@@ -41,6 +41,16 @@ Windows 用户请在 **WSL** 中使用 tmux；原生 Windows PowerShell 本身�
 
 ## 安装 VoiceTerm
 
+### 一条命令安装（推荐）
+
+```bash
+npx skills add houyongsheng/voiceterm-skill --skill voice-term --agent codex --global
+```
+
+这会把 VoiceTerm 全局安装给 Codex。只有确定要跳过安装器确认提示时，才额外加上 `--yes`。
+
+### 手动安装
+
 克隆仓库后，将 Skill 文件夹复制到 Codex 的全局 Skills 目录：
 
 ```bash

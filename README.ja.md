@@ -41,6 +41,16 @@ Windows では **WSL** 内で tmux を実行してください。ネイティブ
 
 ## VoiceTerm のインストール
 
+### ワンコマンドインストール（推奨）
+
+```bash
+npx skills add houyongsheng/voiceterm-skill --skill voice-term --agent codex --global
+```
+
+VoiceTerm を Codex 用にグローバルインストールします。インストーラーの確認を省略したい場合にのみ `--yes` を追加してください。
+
+### 手動インストール
+
 このリポジトリをクローンし、Skill フォルダーを Codex のグローバル Skills ディレクトリへコピーします。
 
 ```bash

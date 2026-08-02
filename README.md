@@ -41,6 +41,16 @@ On Windows, run tmux in **WSL**. Native Windows PowerShell is not itself a tmux 
 
 ## Install VoiceTerm
 
+### One-command install (recommended)
+
+```bash
+npx skills add houyongsheng/voiceterm-skill --skill voice-term --agent codex --global
+```
+
+This installs VoiceTerm globally for Codex. Add `--yes` only when you want to skip the installer's confirmation prompt.
+
+### Manual install
+
 Clone this repository and copy the skill folder into Codex's global skills directory:
 
 ```bash
