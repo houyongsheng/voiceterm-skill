@@ -1,0 +1,4 @@
+interface:
+  display_name: "VoiceTerm"
+  short_description: "Collaborate with a project terminal by voice"
+  default_prompt: "Use $voice-term to work with my project tmux session."
