@@ -2,15 +2,15 @@
 
 [English](README.md) · [简体中文](README.zh-CN.md) · [日本語](README.ja.md) · [Español](README.es.md)
 
-**Voice-first terminal collaboration for Codex and tmux.**
+**Voice-first terminal collaboration for AI coding agents and tmux.**
 
 VoiceTerm helps an AI coding assistant and a user work with the same local terminal session through `tmux`. It is designed for voice-driven use: start a named session for a project, then ask the assistant to inspect output or run a task in that session.
 
-> VoiceTerm standardizes a safe workflow. It is not a sandbox and it cannot bypass Codex, operating-system, or terminal permissions.
+> VoiceTerm standardizes a safe workflow. It is not a sandbox and it cannot bypass agent, operating-system, or terminal permissions.
 
 ## What is VoiceTerm?
 
-VoiceTerm lets you and Codex collaborate through the same local `tmux` terminal session. You keep using iTerm2, Ghostty, or another terminal to see and work in the session; after your approval, Codex can read its output and send commands through a voice-led workflow.
+VoiceTerm lets you and a compatible coding agent collaborate through the same local `tmux` terminal session. You keep using iTerm2, Ghostty, or another terminal to see and work in the session; after your approval, the agent can read its output and send commands through a voice-led workflow.
 
 It is useful when you want to:
 
@@ -20,7 +20,7 @@ It is useful when you want to:
 
 ## Requirements
 
-- Codex with Skills available.
+- A compatible coding agent with Skills available.
 - A shell-capable terminal emulator.
 - `tmux` installed.
 
@@ -44,10 +44,10 @@ On Windows, run tmux in **WSL**. Native Windows PowerShell is not itself a tmux 
 ### One-command install (recommended)
 
 ```bash
-npx skills add houyongsheng/voiceterm-skill --skill voice-term --agent codex --global
+npx skills add houyongsheng/voiceterm-skill --skill voice-term --global
 ```
 
-This installs VoiceTerm globally for Codex. Add `--yes` only when you want to skip the installer's confirmation prompt.
+The installer lets the user choose a supported agent, such as Codex, Claude Code, or Cursor, and installs VoiceTerm globally for that agent. For a fixed Codex-only command, add `--agent codex`. Add `--yes` only when you want to skip the installer's confirmation prompt.
 
 ### Manual install
 
@@ -60,7 +60,7 @@ mkdir -p ~/.codex/skills
 cp -R skills/voice-term ~/.codex/skills/voice-term
 ```
 
-On Windows, run the same commands in WSL. Start a new Codex task after installation; restart Codex if the skill is not discovered.
+On Windows, run the same commands in WSL. Start a new task in the selected agent after installation; restart the agent if the skill is not discovered.
 
 ## Quick start
 
@@ -70,7 +70,7 @@ Open a terminal at the target project root, then create a session named `project
 tmux new -s mygame-web
 ```
 
-Then say: “Use VoiceTerm to work with `mygame-web`.”
+Then ask your agent to use VoiceTerm with `mygame-web`.
 
 For an existing session:
 
@@ -97,7 +97,7 @@ VoiceTerm matches the project and purpose to the session name, and asks instead 
 - Project changes, process control, tests, and dependency installation require a clear voice confirmation.
 - Destructive actions, Git history changes, pushes, deployments, account changes, and sensitive-data access require specific confirmation for each action.
 - Passwords, one-time codes, recovery codes, and API keys must always be entered by the user.
-- Codex and operating-system permission prompts remain under the user's control.
+- Agent and operating-system permission prompts remain under the user's control.
 - Do not grant broad permission by command prefix. Authorize effects instead, such as project-only reads, public fetches from named domains, or a project's test command.
 
 ## Repository layout

@@ -1,6 +1,6 @@
 ---
 name: voice-term
-description: Guide voice-driven collaboration with a user's local tmux project session from Codex. Use when the user asks to set up, inspect, run commands in, or share a terminal session through voice, especially with iTerm2, Ghostty, PowerShell, or multiple active projects.
+description: Guide voice-driven collaboration with a user's local tmux project session from an AI coding agent. Use when the user asks to set up, inspect, run commands in, or share a terminal session through voice, especially with iTerm2, Ghostty, PowerShell, or multiple active projects.
 ---
 
 # VoiceTerm
@@ -54,7 +54,7 @@ Apply these four levels. Do not broaden a user's approval from one level to anot
 3. **High-impact actions**: delete or overwrite material data, change branches or history, publish or push changes, deploy, access secrets, alter accounts, or perform system-wide actions. Ask immediately before each specific action and name its consequence.
 4. **Credentials and approval prompts**: never type, request, read, copy, or infer passwords, one-time codes, recovery codes, or API keys. Never answer a terminal `yes/no` prompt or a Codex permission prompt without the user's clear, current confirmation.
 
-When Codex itself displays a tool or terminal permission prompt, pause and explain what the approval enables. The user must approve or reject it in the Codex interface; VoiceTerm cannot bypass it. When a command running inside tmux displays an interactive `yes/no` prompt, show its effect, ask the user verbally, and send a response only after an unambiguous confirmation. For password or multi-factor prompts, ask the user to enter the value directly in their terminal instead.
+When the coding agent itself displays a tool or terminal permission prompt, pause and explain what the approval enables. The user must approve or reject it in the agent interface; VoiceTerm cannot bypass it. When a command running inside tmux displays an interactive `yes/no` prompt, show its effect, ask the user verbally, and send a response only after an unambiguous confirmation. For password or multi-factor prompts, ask the user to enter the value directly in their terminal instead.
 
 ## Voice approval profiles
 
@@ -71,5 +71,5 @@ Do not treat a blanket approval for `curl`, `cat`, or any other command prefix a
 ## Limits
 
 - A tmux session provides shared terminal context, not filesystem confinement.
-- VoiceTerm standardizes Codex behavior; it cannot bypass Codex, operating-system, or terminal permissions.
+- VoiceTerm standardizes agent behavior; it cannot bypass agent, operating-system, or terminal permissions.
 - Connection and command permissions may still prompt the user, and must not be bypassed.

@@ -2,15 +2,15 @@
 
 [English](README.md) · [简体中文](README.zh-CN.md) · [日本語](README.ja.md) · [Español](README.es.md)
 
-**面向 Codex 与 tmux 的语音终端协作方式。**
+**面向 AI 编程智能体与 tmux 的语音终端协作方式。**
 
 VoiceTerm 让 AI 编程助手与用户通过 `tmux` 协作同一个本地终端会话。它面向语音使用：先为项目创建一个有名字的会话，再让助手读取输出或在该会话中执行任务。
 
-> VoiceTerm 用于规范安全的协作流程；它不是沙箱，也不能绕过 Codex、操作系统或终端本身的权限。
+> VoiceTerm 用于规范安全的协作流程；它不是沙箱，也不能绕过智能体、操作系统或终端本身的权限。
 
 ## 它解决什么问题？
 
-你继续用 iTerm2、Ghostty 或其他终端查看和手动操作；在获得你的确认后，Codex 可以读取同一 tmux 会话的输出、发送命令，并将确认流程保留在语音对话中。
+你继续用 iTerm2、Ghostty 或其他终端查看和手动操作；在获得你的确认后，兼容的编程智能体可以读取同一 tmux 会话的输出、发送命令，并将确认流程保留在语音对话中。
 
 它适合：
 
@@ -20,7 +20,7 @@ VoiceTerm 让 AI 编程助手与用户通过 `tmux` 协作同一个本地终端�
 
 ## 前置条件
 
-- 已安装并能使用 Codex Skills。
+- 已安装并能使用 Skills 的兼容编程智能体。
 - 使用支持 shell 的终端，例如 iTerm2、Ghostty、macOS Terminal、Linux 终端，或 Windows 上的 WSL 终端。
 - 已安装 `tmux`。
 
@@ -44,10 +44,10 @@ Windows 用户请在 **WSL** 中使用 tmux；原生 Windows PowerShell 本身�
 ### 一条命令安装（推荐）
 
 ```bash
-npx skills add houyongsheng/voiceterm-skill --skill voice-term --agent codex --global
+npx skills add houyongsheng/voiceterm-skill --skill voice-term --global
 ```
 
-这会把 VoiceTerm 全局安装给 Codex。只有确定要跳过安装器确认提示时，才额外加上 `--yes`。
+安装器会让用户选择目标智能体，例如 Codex、Claude Code 或 Cursor，并为所选智能体全局安装 VoiceTerm。若要固定只安装给 Codex，再加上 `--agent codex`。只有确定要跳过安装器确认提示时，才额外加上 `--yes`。
 
 ### 手动安装
 
@@ -60,7 +60,7 @@ mkdir -p ~/.codex/skills
 cp -R skills/voice-term ~/.codex/skills/voice-term
 ```
 
-在 Windows 上，请在 WSL 终端中执行相同命令。安装后新开一个 Codex 任务；如果没有发现 VoiceTerm，重启 Codex 后再试。
+在 Windows 上，请在 WSL 终端中执行相同命令。安装后在所选智能体中开启新任务；如果没有发现 VoiceTerm，重启该智能体后再试。
 
 ## 快速开始
 
@@ -70,7 +70,7 @@ cp -R skills/voice-term ~/.codex/skills/voice-term
 tmux new -s mygame-web
 ```
 
-然后对 Codex 说：“使用 VoiceTerm 操作 `mygame-web`。”
+然后让你的智能体使用 VoiceTerm 操作 `mygame-web`。
 
 如果会话已存在，重新连接：
 
@@ -97,7 +97,7 @@ VoiceTerm 会按项目名和用途匹配会话；目标有歧义时，它会先�
 - 修改项目、控制进程、运行测试和安装依赖，需要明确的语音确认。
 - 删除、改 Git 历史、推送、部署、改账号或访问敏感信息，必须对每个动作单独确认。
 - 密码、验证码、恢复码和 API 密钥只能由你亲自输入。
-- Codex 或操作系统自己的授权弹窗仍由你控制。
+- 智能体或操作系统自己的授权弹窗仍由你控制。
 - 不要按命令前缀做全量授权；请按实际效果授权，例如“仅读取本项目”“从指定公开网站下载”或“运行本项目测试”。
 
 ## 仓库结构

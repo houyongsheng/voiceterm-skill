@@ -2,15 +2,15 @@
 
 [English](README.md) · [简体中文](README.zh-CN.md) · [日本語](README.ja.md) · [Español](README.es.md)
 
-**Colaboración de terminal guiada por voz para Codex y tmux.**
+**Colaboración de terminal guiada por voz para agentes de programación con IA y tmux.**
 
 VoiceTerm permite que un asistente de programación con IA y una persona trabajen en la misma sesión local de terminal mediante `tmux`. Está pensado para el uso por voz: inicia una sesión con nombre para un proyecto y pide al asistente que inspeccione la salida o ejecute una tarea en esa sesión.
 
-> VoiceTerm estandariza un flujo de trabajo seguro. No es una zona aislada y no puede omitir los permisos de Codex, del sistema operativo ni de la terminal.
+> VoiceTerm estandariza un flujo de trabajo seguro. No es una zona aislada y no puede omitir los permisos del agente, del sistema operativo ni de la terminal.
 
 ## ¿Qué es VoiceTerm?
 
-Puedes seguir usando iTerm2, Ghostty u otra terminal para ver y trabajar en la sesión. Tras tu aprobación, Codex puede leer la salida de la misma sesión de `tmux` y enviar comandos mediante un flujo guiado por voz.
+Puedes seguir usando iTerm2, Ghostty u otra terminal para ver y trabajar en la sesión. Tras tu aprobación, un agente de programación compatible puede leer la salida de la misma sesión de `tmux` y enviar comandos mediante un flujo guiado por voz.
 
 Es útil para:
 
@@ -20,7 +20,7 @@ Es útil para:
 
 ## Requisitos
 
-- Codex con Skills disponibles.
+- Un agente de programación compatible con Skills disponibles.
 - Un emulador de terminal capaz de ejecutar un shell.
 - `tmux` instalado.
 
@@ -44,10 +44,10 @@ En Windows, ejecuta tmux dentro de **WSL**. Windows PowerShell nativo no es por 
 ### Instalación con un comando (recomendada)
 
 ```bash
-npx skills add houyongsheng/voiceterm-skill --skill voice-term --agent codex --global
+npx skills add houyongsheng/voiceterm-skill --skill voice-term --global
 ```
 
-Esto instala VoiceTerm globalmente para Codex. Añade `--yes` solo si quieres omitir la confirmación del instalador.
+El instalador permite elegir un agente compatible, como Codex, Claude Code o Cursor, e instala VoiceTerm globalmente para el agente elegido. Para fijarlo solo a Codex, añade `--agent codex`. Añade `--yes` solo si quieres omitir la confirmación del instalador.
 
 ### Instalación manual
 
@@ -60,7 +60,7 @@ mkdir -p ~/.codex/skills
 cp -R skills/voice-term ~/.codex/skills/voice-term
 ```
 
-En Windows, ejecuta los mismos comandos en WSL. Inicia una nueva tarea de Codex después de instalarlo; reinicia Codex si el Skill no se detecta.
+En Windows, ejecuta los mismos comandos en WSL. Inicia una tarea nueva en el agente elegido después de instalarlo; reinicia ese agente si el Skill no se detecta.
 
 ## Inicio rápido
 
@@ -70,7 +70,7 @@ Abre una terminal en la raíz del proyecto objetivo y crea una sesión con el fo
 tmux new -s mygame-web
 ```
 
-Después di: “Usa VoiceTerm para trabajar con `mygame-web`”.
+Después pide a tu agente que use VoiceTerm con `mygame-web`.
 
 Para conectarte a una sesión existente:
 
@@ -97,7 +97,7 @@ VoiceTerm relaciona el proyecto y el propósito con el nombre de la sesión, y p
 - Los cambios en el proyecto, el control de procesos, las pruebas y la instalación de dependencias requieren una confirmación por voz clara.
 - Las acciones destructivas, los cambios del historial de Git, los envíos remotos, los despliegues, los cambios de cuenta y el acceso a datos sensibles requieren una confirmación específica para cada acción.
 - Las contraseñas, códigos de un solo uso, códigos de recuperación y claves de API siempre deben introducirse por la persona usuaria.
-- Los avisos de permisos de Codex y del sistema operativo permanecen bajo control de la persona usuaria.
+- Los avisos de permisos del agente y del sistema operativo permanecen bajo control de la persona usuaria.
 - No concedas permisos amplios por el prefijo de un comando. Autoriza los efectos, por ejemplo: solo lectura del proyecto, obtenciones públicas desde dominios indicados o el comando de pruebas de un proyecto.
 
 ## Estructura del repositorio
